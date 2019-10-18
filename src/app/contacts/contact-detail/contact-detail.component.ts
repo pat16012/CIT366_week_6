@@ -1,5 +1,5 @@
-import { Component, OnInit } from '@angular/core';
-import {ContactModel} from '../contact.model';
+import {Component, Input, OnInit} from '@angular/core';
+import {Contact} from '../contact.model';
 
 @Component({
   selector: 'cms-contact-detail',
@@ -7,11 +7,7 @@ import {ContactModel} from '../contact.model';
   styleUrls: ['./contact-detail.component.css']
 })
 export class ContactDetailComponent implements OnInit {
-  contacts: ContactModel[] = [
-    new ContactModel(1, 'Bro. Jackson', 'jacksonk@byui.edu',
-      '208-496-3771', 'https://web.byui.edu/Directory/Employee/jacksonk.jpg',
-      'null')
-  ];
+  @Input() contact: Contact;
   constructor() { }
 
   ngOnInit() {
