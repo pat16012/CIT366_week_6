@@ -1,5 +1,8 @@
-import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
 import { Message } from '../../message.model';
+import {ContactsService} from '../../../contacts/contacts.service';
+import {Contact} from '../../../contacts/contact.model';
+import {MessagesService} from '../../messages.service';
 
 @Component({
   selector: 'cms-message-item',
@@ -7,16 +10,18 @@ import { Message } from '../../message.model';
   styleUrls: ['./message-item.component.css']
 })
 export class MessageItemComponent implements OnInit {
-  @Input() message: Message;
-  @Output() messageSelected = new EventEmitter<void>();
+  constructor(private contactService: ContactsService, private messagesService: MessagesService) { }
 
-  constructor() { }
+  @Input() message: Message;
+  messageSender: string;
 
   ngOnInit() {
+    let contact: Contact = this.contactService.getContact(this.message.sender);
+    this.messageSender = contact.name;
   }
 
-  onSelected() {
-    this.messageSelected.emit();
+  onSelected(contact: Contact) {
+    this.contactService.contactSelectedEvent.emit(contact);
   }
 
 }

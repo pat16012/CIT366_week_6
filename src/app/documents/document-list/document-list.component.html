@@ -1,4 +1,4 @@
-<p>Document list Works</p>
+
 <div class="panel panel-defaults">
   <div class="panel-heading">
     <div class="row pad-left-right">
@@ -10,7 +10,7 @@
     <div class="center-panel">
       <cms-document-item *ngFor="let documentsEl of documents"
                          [document]="documentsEl"
-                         (documentSelected)="onDocumentSelected(documentsEl)"></cms-document-item>
+                         (documentSelected)="onSelectedDocument(documentsEl)"></cms-document-item>
     </div>
   </div>
 </div>
