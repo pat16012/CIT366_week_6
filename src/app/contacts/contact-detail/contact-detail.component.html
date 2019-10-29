@@ -12,14 +12,14 @@
               class="img-responsive"
               style="max-height: 50px;">
           </span>
-          <button class="btn btn-danger pull-right">Delete</button>
-          <button class="btn btn-primary pull-right">Edit</button>
+          <a class="btn btn-danger pull-right" style="cursor: pointer" (click)="onDelete()">Delete</a>
+          <a class="btn btn-primary pull-right" style="cursor: pointer" routerLink="edit">Edit</a>
       </div>
       </div>
   <div class="panel-body">
     <div class="row">
       <div >
-        <a href="#" class="list-group-item pull-left">
+        <a class="list-group-item pull-left">
             E-mail: {{contact.email}}
             <br>
             Phone: {{contact.phone}}

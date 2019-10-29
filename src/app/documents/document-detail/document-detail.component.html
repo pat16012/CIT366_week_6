@@ -1,8 +1,26 @@
 
-<div class="row">
-  <div class="col-xs-12">
-    <h1>{{document.name}}</h1>
-    <br>
-    <h1>{{document.description}}</h1>
+<div class="panel panel-default">
+  <div class="panel-heading">
+    <div class="row">
+      <div class="col-xs-12">
+          <span class="row">
+            <h3 class="list-group-item-heading">{{ document.name }}</h3>
+            </span>
+        <a class="btn btn-danger pull-right" style="cursor: pointer" routerLink="delete" (click)="onDelete()">Delete</a>
+        <a class="btn btn-primary pull-right" style="cursor: pointer" routerLink="edit">Edit</a>
+        <a class="btn btn-primary pull-right" style="cursor: pointer"  (click)="onView()">View</a>
+      </div>
+    </div>
+    <div class="panel-body">
+      <div class="row">
+        <div >
+          <a class="list-group-item pull-left">
+            Description: {{document.description}}
+            <br>
+            URL: {{document.url}}
+          </a>
+        </div>
+      </div>
+    </div>
   </div>
 </div>

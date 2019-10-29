@@ -21,7 +21,7 @@ export class MessageItemComponent implements OnInit {
   }
 
   onSelected(contact: Contact) {
-    this.contactService.contactSelectedEvent.emit(contact);
+    this.contactService.contactSelected.emit(contact);
   }
 
 }
